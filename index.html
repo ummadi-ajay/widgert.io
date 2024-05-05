@@ -1,4 +1,4 @@
-< html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,7 +17,7 @@
     </form>
 <script>
 // Register a service worker for caching and offline functionality
-$(document).ready(function() {
+
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
             navigator.serviceWorker.register('/service-worker.js')
@@ -29,7 +29,7 @@ $(document).ready(function() {
                 });
         });
     }
-});
+
 
 // Prompt users to install the PWA
 window.addEventListener('beforeinstallprompt', function(event) {
