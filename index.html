@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#007bff">
+
+    <title>Search App</title>
+    <link rel="manifest" href="/manifest.json">
+
+</head>
+<body>
+    <h1>Search App</h1>
+    <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+<script>
+// Register a service worker for caching and offline functionality
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(function(registration) {
+                console.log('Service Worker registered:', registration);
+            })
+            .catch(function(error) {
+                console.error('Service Worker registration failed:', error);
+            });
+    });
+}
+// Prompt users to install the PWA
+window.addEventListener('beforeinstallprompt', function(event) {
+    // Prevent Chrome 67 and earlier from automatically showing the prompt
+    event.preventDefault();
+    // Stash the event so it can be triggered later
+    deferredPrompt = event;
+    // Update UI notify the user they can add to home screen
+    // Show a button or banner to prompt installation
+});
+</script>
+</body>
+</html>
