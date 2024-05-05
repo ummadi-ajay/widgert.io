@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+< html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,7 +20,7 @@
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-            navigator.serviceWorker.register('/service-worker.js')
+            navigator.serviceWorker.register('https://github.com/ummadi-ajay/widgert.io/blob/main/service-worker.js')
                 .then(function(registration) {
                     console.log('Service Worker registered:', registration);
                 })
